@@ -17,7 +17,7 @@ namespace Kon::Buttons {
             return inSize;
         }
 
-        // This is what we'll be manipulating to return an output.
+        // This is what we'll be manipulating to return an output. | mi ante e ijo ni tan ni: pana ijo
         QSize returnSize;
 
         // Let's get some convenience things going here.
@@ -126,8 +126,7 @@ namespace Kon::Buttons {
             if(buttonPressed) {
                 painter->setBrush(widget->palette().color(QPalette::Button).darker());
             }
-            auto rect = Kon::Utils::ResizeRect(buttonRect, Constants::Button__BorderSize, Utils::In);
-            painter->drawRoundedRect(QRect(rect.x()+Constants::Button__BorderSize/2,rect.y()+Constants::Button__BorderSize/2,rect.width(),rect.height()), 10, 10);
+            painter->drawRoundedRect(Kon::Utils::ResizeRect(buttonRect, Constants::Button__BorderSize, Utils::In), 10, 10);
         } else {
             if (buttonFocused) {
                 painter->setPen(QPen(widget->palette().color(QPalette::Highlight), Constants::Button__BorderSize));
@@ -136,8 +135,7 @@ namespace Kon::Buttons {
                 painter->setBrush(widget->palette().color(QPalette::Button).darker());
             }
             if(buttonFocused || buttonPressed) {
-                auto rect = Kon::Utils::ResizeRect(buttonRect, Constants::Button__BorderSize, Utils::In);
-                painter->drawRoundedRect(QRect(rect.x()+Constants::Button__BorderSize/2,rect.y()+Constants::Button__BorderSize/2,rect.width(),rect.height()), 10, 10);
+                painter->drawRoundedRect(Kon::Utils::ResizeRect(buttonRect, Constants::Button__BorderSize, Utils::In), 10, 10);
             }
         }
 

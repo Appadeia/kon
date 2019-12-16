@@ -6,6 +6,13 @@ namespace Kon::Utils {
         auto size = rect.size();
         size = ResizeSize(size, factor, dir);
         rect.setSize(size);
+        if (dir == In) {
+            rect.setX(rect.x()+factor/2);
+            rect.setY(rect.y()+factor/2);
+        } else {
+            rect.setX(rect.x()-factor/2);
+            rect.setY(rect.y()-factor/2);
+        }
         return rect;
     }
     QRect CenterRect(QRect rect, QSize size) {
